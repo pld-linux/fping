@@ -3,7 +3,7 @@ Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
 Summary(pt_BR):	Ferramenta para enviar pings para várias máquinas de uma só vez
 Name:		fping
 Version:	2.4b2
-Release:	7
+Release:	8
 License:	distributable
 Group:		Networking/Admin
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
@@ -70,10 +70,15 @@ mv fping fping6
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_sbindir}
+
 %{__make} install \
+	sbindir=%{_bindir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install fping6 $RPM_BUILD_ROOT%{_sbindir}
+install fping6 $RPM_BUILD_ROOT%{_bindir}
+ln -s %{_bindir}/fping $RPM_BUILD_ROOT%{_sbindir}
+ln -s %{_bindir}/fping6 $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,5 +86,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README COPYING
-%attr(4754,root,adm) %{_sbindir}/*
+%attr(4754,root,adm) %{_bindir}/*
+%{_sbindir}/*
 %{_mandir}/man*/*
