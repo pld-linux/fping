@@ -2,7 +2,7 @@ Summary:	fping - pings multiple hosts at once
 Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
 Name:		fping
 Version:	2.4b2
-Release:	4
+Release:	5
 License:	distributable
 Group:		Networking/Admin
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
@@ -52,7 +52,8 @@ rm -f missing
 
 %{__make}
 mv fping fping6
-%configure --disable-ipv6
+%configure \
+	--disable-ipv6
 %{__make}
 
 %install
