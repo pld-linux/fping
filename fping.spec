@@ -41,7 +41,7 @@ czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 rm -f missing
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure
 
 %{__make}
