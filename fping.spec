@@ -8,6 +8,8 @@ Group:		Networking/Admin
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.fping.com/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,7 +41,7 @@ czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
