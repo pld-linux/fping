@@ -3,11 +3,12 @@ Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
 Name:		fping
 Version:	2.4b2
 Release:	1
-License:	GPL (?)
+License:	distributable
 Group:		Networking/Admin
 Group(de):	Netzwerkwesen/Administration
 Group(pl):	Sieciowe/Administracyjne
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.fping.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,6 +37,7 @@ czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
@@ -51,10 +53,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
 
+gzip -9nf ChangeLog README COPYING
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
+%doc *.gz
 %defattr(644,root,root,755)
 %attr(4750,root,adm) %{_sbindir}/*
 %{_mandir}/man*/*
