@@ -7,6 +7,7 @@ Release:	5
 License:	distributable
 Group:		Networking/Admin
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
+# Source0-md5:	d3c4a12119a04893d744137f861e1ecd
 Patch0:		%{name}-ac_fixes.patch
 Patch1:		%{name}-ipv6.patch
 Patch2:		%{name}-ipv6-ac.patch
