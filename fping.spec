@@ -40,8 +40,8 @@ czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 %build
 rm -f missing
 aclocal
-autoconf
-automake -a -c -f --foreign
+%{__autoconf}
+%{__automake}
 %configure
 
 %{__make}
