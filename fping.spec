@@ -2,11 +2,11 @@ Summary:	fping - pings multiple hosts at once
 Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
 Name:		fping
 Version:	2.4b2
-Release:	2
+Release:	3
 License:	distributable
 Group:		Networking/Admin
-Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-ac_fixes.patch
+Source0:	http://www.fping.com/download/%{name}-%{version}_to-ipv6.tar.gz
+#Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.fping.com/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,9 +33,9 @@ hosta w trybie Round-Robin. Je¿eli host odpowiada, jest on zapisywany
 i usuwany z listy do sprawdzenia. Je¿eli nie odpowiada przez pewien
 czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 
-%prep
-%setup -q
-%patch0 -p1
+%prep 
+%setup -q -n %{name}-%{version}_to-ipv6
+#%patch0 -p1
 
 %build
 rm -f missing
