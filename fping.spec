@@ -2,7 +2,7 @@ Summary:	fping - pings multiple hosts at once
 Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
 Name:		fping
 Version:	2.4b2
-Release:	1
+Release:	2
 License:	distributable
 Group:		Networking/Admin
 Group(de):	Netzwerkwesen/Administration
