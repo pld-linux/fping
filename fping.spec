@@ -5,8 +5,6 @@ Version:	2.4b2
 Release:	2
 License:	distributable
 Group:		Networking/Admin
-Group(de):	Netzwerkwesen/Administration
-Group(pl):	Sieciowe/Administracyjne
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
 URL:		http://www.fping.com/
