@@ -1,5 +1,6 @@
 Summary:	fping - pings multiple hosts at once
 Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
+Summary(pt_BR):	Ferramenta para enviar pings para várias máquinas de uma só vez
 Name:		fping
 Version:	2.4b2
 Release:	5
@@ -37,7 +38,17 @@ hosta w trybie Round-Robin. Je¿eli host odpowiada, jest on zapisywany
 i usuwany z listy do sprawdzenia. Je¿eli nie odpowiada przez pewien
 czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 
-%prep 
+%description -l pt_BR
+O fping é um programa que utiliza a requisição de eco do Internet
+Control Message Protocol (ICMP) para determinar se uma máquina alvo
+está respondendo. O fping difere do ping na medida que se pode
+especificar qualquer número de alvos na linha de comando, ou
+especificar um arquivo contendo as listas de alvos a enviar ping. Ao
+invés de enviar para um alvo até que expire o tempo máximo ou ele
+responda, o fping enviará um pacote de ping para cada alvo ao mesmo
+tempo.
+
+%prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
