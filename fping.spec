@@ -61,18 +61,19 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure
-
 %{__make}
 mv fping fping6
+
 %configure \
 	--disable-ipv6
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
-install fping6 $RPM_BUILD_ROOT%{_sbindir}/
+install fping6 $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
