@@ -59,7 +59,7 @@ gzip -9nf ChangeLog README COPYING
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%doc *.gz
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(4750,root,adm) %{_sbindir}/*
 %{_mandir}/man*/*
