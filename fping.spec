@@ -7,6 +7,8 @@ License:	distributable
 Group:		Networking/Admin
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_fixes.patch
+Patch1:		%{name}-ipv6.patch
+Patch2:		%{name}-ipv6-ac.patch
 URL:		http://www.fping.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -38,6 +40,8 @@ czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
 %prep 
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
@@ -47,11 +51,15 @@ rm -f missing
 %configure
 
 %{__make}
+mv fping fping6
+%configure --disable-ipv6
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
+install fping6 $RPM_BUILD_ROOT%{_sbindir}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
