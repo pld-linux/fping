@@ -1,6 +1,6 @@
 Summary:	fping - pings multiple hosts at once
-Summary(pl):	fping - ping sprawdzaj±cy wiele hostów naraz
-Summary(pt_BR):	Ferramenta para enviar pings para várias máquinas de uma só vez
+Summary(pl.UTF-8):   fping - ping sprawdzajÄ…cy wiele hostÃ³w naraz
+Summary(pt_BR.UTF-8):   Ferramenta para enviar pings para vÃ¡rias mÃ¡quinas de uma sÃ³ vez
 Name:		fping
 Version:	2.4b2
 Release:	8
@@ -28,25 +28,25 @@ removed from the list of hosts to check. If a host does not respond
 within a certain time limit and/or retry limit it will be considered
 unreachable.
 
-%description -l pl
-fping to program podobny do ping(1), u¿ywaj±cego ¿±dania echo
-(echo-request) protoko³u ICMP do stwierdzenia, czy host dzia³a. fping
-ró¿ni siê od ping tym, ¿e mo¿na podaæ dowoln± liczbê hostów z linii
-poleceñ lub podaæ plik zawieraj±cy listê hostów do sprawdzenia.
-Zamiast sprawdzania pojedynczego hosta do up³yniêcia limitu czasu lub
-odpowiedzi, fping wysy³a pakiet pinga i przesuwa siê do nastêpnego
-hosta w trybie Round-Robin. Je¿eli host odpowiada, jest on zapisywany
-i usuwany z listy do sprawdzenia. Je¿eli nie odpowiada przez pewien
-czas lub pewn± liczbê prób, jest traktowany jako niedostêpny.
+%description -l pl.UTF-8
+fping to program podobny do ping(1), uÅ¼ywajÄ…cego Å¼Ä…dania echo
+(echo-request) protokoÅ‚u ICMP do stwierdzenia, czy host dziaÅ‚a. fping
+rÃ³Å¼ni siÄ™ od ping tym, Å¼e moÅ¼na podaÄ‡ dowolnÄ… liczbÄ™ hostÃ³w z linii
+poleceÅ„ lub podaÄ‡ plik zawierajÄ…cy listÄ™ hostÃ³w do sprawdzenia.
+Zamiast sprawdzania pojedynczego hosta do upÅ‚yniÄ™cia limitu czasu lub
+odpowiedzi, fping wysyÅ‚a pakiet pinga i przesuwa siÄ™ do nastÄ™pnego
+hosta w trybie Round-Robin. JeÅ¼eli host odpowiada, jest on zapisywany
+i usuwany z listy do sprawdzenia. JeÅ¼eli nie odpowiada przez pewien
+czas lub pewnÄ… liczbÄ™ prÃ³b, jest traktowany jako niedostÄ™pny.
 
-%description -l pt_BR
-O fping é um programa que utiliza a requisição de eco do Internet
-Control Message Protocol (ICMP) para determinar se uma máquina alvo
-está respondendo. O fping difere do ping na medida que se pode
-especificar qualquer número de alvos na linha de comando, ou
+%description -l pt_BR.UTF-8
+O fping Ã© um programa que utiliza a requisiÃ§Ã£o de eco do Internet
+Control Message Protocol (ICMP) para determinar se uma mÃ¡quina alvo
+estÃ¡ respondendo. O fping difere do ping na medida que se pode
+especificar qualquer nÃºmero de alvos na linha de comando, ou
 especificar um arquivo contendo as listas de alvos a enviar ping. Ao
-invés de enviar para um alvo até que expire o tempo máximo ou ele
-responda, o fping enviará um pacote de ping para cada alvo ao mesmo
+invÃ©s de enviar para um alvo atÃ© que expire o tempo mÃ¡ximo ou ele
+responda, o fping enviarÃ¡ um pacote de ping para cada alvo ao mesmo
 tempo.
 
 %prep
