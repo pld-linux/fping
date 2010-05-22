@@ -5,7 +5,7 @@ Name:		fping
 Version:	2.4b2
 Release:	8
 License:	distributable
-Group:		Networking/Admin
+Group:		Networking/Utilities
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
 # Source0-md5:	d3c4a12119a04893d744137f861e1ecd
 Patch0:		%{name}-ac_fixes.patch
