@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	fping - ping sprawdzający wiele hostów naraz
 Summary(pt_BR.UTF-8):	Ferramenta para enviar pings para várias máquinas de uma só vez
 Name:		fping
 Version:	2.4b2
-Release:	8
+Release:	9
 License:	distributable
 Group:		Networking/Utilities
 Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
