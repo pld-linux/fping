@@ -2,16 +2,13 @@ Summary:	fping - pings multiple hosts at once
 Summary(pl.UTF-8):	fping - ping sprawdzający wiele hostów naraz
 Summary(pt_BR.UTF-8):	Ferramenta para enviar pings para várias máquinas de uma só vez
 Name:		fping
-Version:	2.4b2
-Release:	9
+Version:	3.13
+Release:	1
 License:	distributable
 Group:		Networking/Utilities
-Source0:	http://www.fping.com/download/%{name}-%{version}.tar.gz
-# Source0-md5:	d3c4a12119a04893d744137f861e1ecd
-Patch0:		%{name}-ac_fixes.patch
-Patch1:		%{name}-ipv6.patch
-Patch2:		%{name}-ipv6-ac.patch
-URL:		http://www.fping.com/
+Source0:	http://fping.org/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	a39134baca6bc6ced56191cb51fb0dc2
+URL:		http://fping.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,21 +48,12 @@ tempo.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
-%{__make}
-mv fping fping6
-
-%configure \
-	--disable-ipv6
+%configure --enable-ipv4 --enable-ipv6
 %{__make}
 
 %install
@@ -76,7 +64,6 @@ install -d $RPM_BUILD_ROOT%{_sbindir}
 	sbindir=%{_bindir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install fping6 $RPM_BUILD_ROOT%{_bindir}
 ln -s %{_bindir}/fping $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_bindir}/fping6 $RPM_BUILD_ROOT%{_sbindir}
 
