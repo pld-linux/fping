@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	fping - ping sprawdzający wiele hostów naraz
 Summary(pt_BR.UTF-8):	Ferramenta para enviar pings para várias máquinas de uma só vez
 Name:		fping
 Version:	3.13
-Release:	1
+Release:	2
 License:	distributable
 Group:		Networking/Utilities
 Source0:	http://fping.org/dist/%{name}-%{version}.tar.gz
@@ -73,6 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README COPYING
-%attr(4754,root,adm) %{_bindir}/*
-%{_sbindir}/*
-%{_mandir}/man*/*
+%attr(4754,root,icmp) %{_bindir}/fping
+%attr(4754,root,icmp) %{_bindir}/fping6
+%attr(4754,root,icmp) %{_sbindir}/fping
+%attr(4754,root,icmp) %{_sbindir}/fping6
+%{_mandir}/man8/fping*.8*
