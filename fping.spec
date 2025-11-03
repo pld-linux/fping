@@ -2,12 +2,12 @@ Summary:	fping - pings multiple hosts at once
 Summary(pl.UTF-8):	fping - ping sprawdzający wiele hostów naraz
 Summary(pt_BR.UTF-8):	Ferramenta para enviar pings para várias máquinas de uma só vez
 Name:		fping
-Version:	5.3
+Version:	5.4
 Release:	1
 License:	distributable
 Group:		Networking/Utilities
 Source0:	http://fping.org/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	36e18865ebdaf72e31afa0ca3e4fa292
+# Source0-md5:	b19d8ef759befa3e1dcf44fcc529fcfd
 URL:		http://fping.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
