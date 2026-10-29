@@ -1,0 +1,47 @@
+"fping -0" crashed: long-only options shared the short name '0'.
+https://github.com/schweikert/fping/commit/977d47f333
+
+--- fping-5.5.orig/src/fping.c
++++ fping-5.5/src/fping.c
+@@ -641,7 +641,7 @@
+         { "vcount", 'C', OPTPARSE_REQUIRED },
+         { "rdns", 'd', OPTPARSE_NONE },
+         { "timestamp", 'D', OPTPARSE_NONE },
+-        { "timestamp-format", '0', OPTPARSE_REQUIRED },
++        { "timestamp-format", 0, OPTPARSE_REQUIRED },
+         { "elapsed", 'e', OPTPARSE_NONE },
+         { "file", 'f', OPTPARSE_REQUIRED },
+         { "generate", 'g', OPTPARSE_NONE },
+@@ -650,7 +650,7 @@
+         { "interval", 'i', OPTPARSE_REQUIRED },
+         { "iface", 'I', OPTPARSE_REQUIRED },
+         { "json", 'J', OPTPARSE_NONE },
+-        { "icmp-timestamp", '0', OPTPARSE_NONE },
++        { "icmp-timestamp", 0, OPTPARSE_NONE },
+ #ifdef SO_MARK
+         { "fwmark", 'k', OPTPARSE_REQUIRED },
+ #endif
+@@ -674,10 +674,10 @@
+         { "version", 'v', OPTPARSE_NONE },
+         { "reachable", 'x', OPTPARSE_REQUIRED },
+         { "fast-reachable", 'X', OPTPARSE_REQUIRED },
+-        { "check-source", '0', OPTPARSE_NONE },
+-        { "print-tos", '0', OPTPARSE_NONE },
+-        { "print-ttl", '0', OPTPARSE_NONE },
+-        { "seqmap-timeout", '0', OPTPARSE_REQUIRED },
++        { "check-source", 0, OPTPARSE_NONE },
++        { "print-tos", 0, OPTPARSE_NONE },
++        { "print-ttl", 0, OPTPARSE_NONE },
++        { "seqmap-timeout", 0, OPTPARSE_REQUIRED },
+ #if defined(DEBUG) || defined(_DEBUG)
+         { NULL, 'z', OPTPARSE_REQUIRED },
+ #endif
+@@ -687,7 +687,7 @@
+     double opt_val_double;
+     while ((c = optparse_long(&optparse_state, longopts, NULL)) != EOF) {
+         switch (c) {
+-        case '0':
++        case 0:
+             if(strstr(optparse_state.optlongname, "timestamp-format") != NULL) {
+                 if(strcmp(optparse_state.optarg, "ctime") == 0) {
+                   timestamp_format_flag = 1;
